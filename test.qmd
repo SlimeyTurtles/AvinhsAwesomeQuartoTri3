@@ -1,0 +1,19 @@
+---
+title: "test"
+---
+
+```{java}
+
+int a_binary = 01;
+int b_binary = 01;
+
+int a_decimal = Integer.parseInt(a_binary, 2);
+int b_decimal = Integer.parseInt(b_binary, 2);
+
+int sum_decimal = a_decimal + b_decimal;
+
+int sum_binary = Integer.toBinary(sum_decimal);
+
+System.out.println(sum_binary);
+
+```

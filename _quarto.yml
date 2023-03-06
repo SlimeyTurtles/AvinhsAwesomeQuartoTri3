@@ -1,6 +1,13 @@
 project:
   title: "AvinhsAwesomeQuartoTri3"
+  type: website
   output-dir: _output
 
-
+website:
+  title: "CanCode"
+  navbar:
+    left:
+      - href: AvinhsAwesomeQuartoTri3.qmd
+        text: test
+      - test.qmd
 
