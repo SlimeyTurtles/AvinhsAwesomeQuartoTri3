@@ -7,7 +7,8 @@ website:
   title: "CanCode"
   navbar:
     left:
-      - href: AvinhsAwesomeQuartoTri3.qmd
-        text: test
-      - test.qmd
+      - BinaryAdditionEC.qmd
 
+format:
+  html:
+    can-fold: true

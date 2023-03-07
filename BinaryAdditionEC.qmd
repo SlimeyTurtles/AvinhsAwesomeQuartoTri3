@@ -1,0 +1,41 @@
+---
+title: "Binary Addition Extra Credit"
+---
+
+```{java}
+
+class BinaryAddition {
+
+    public void IntWrapperMethod(Integer a_binary, Integer b_binary) {
+
+        System.out.println("Binary Conversion");
+        System.out.println();
+        System.out.println("Binary A: " + a_binary);
+        System.out.println("Binary B: " + b_binary);
+
+        int a_decimal = Integer.parseInt(a_binary.toString(), 2);
+        int b_decimal = Integer.parseInt(b_binary.toString(), 2);
+        
+        int sum_decimal = a_decimal + b_decimal;
+        
+        String sum_binary = Integer.toBinaryString(sum_decimal);
+        
+        System.out.println("Binary Sum: " + sum_binary);
+
+    }
+
+    public static void main(String[] args) {
+        
+        BinaryAddition bin = new BinaryAddition();
+
+        Integer a = 101010;
+        Integer b = 100100;
+        bin.IntWrapperMethod(a, b);
+
+    }
+
+}
+
+BinaryAddition.main(null);
+
+```
