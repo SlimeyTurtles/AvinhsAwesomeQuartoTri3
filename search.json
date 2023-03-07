@@ -1,8 +1,8 @@
 [
   {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "test",
+    "objectID": "BinaryAdditionEC.html",
+    "href": "BinaryAdditionEC.html",
+    "title": "Binary Addition Extra Credit",
     "section": "",
     "text": "class BinaryAddition {\n\n    public void IntWrapperMethod(Integer a_binary, Integer b_binary) {\n\n        System.out.println(\"Binary Conversion\");\n        System.out.println();\n        System.out.println(\"Binary A: \" + a_binary);\n        System.out.println(\"Binary B: \" + b_binary);\n\n        int a_decimal = Integer.parseInt(a_binary.toString(), 2);\n        int b_decimal = Integer.parseInt(b_binary.toString(), 2);\n        \n        int sum_decimal = a_decimal + b_decimal;\n        \n        String sum_binary = Integer.toBinaryString(sum_decimal);\n        \n        System.out.println(\"Binary Sum: \" + sum_binary);\n\n    }\n\n    public static void main(String[] args) {\n        \n        BinaryAddition bin = new BinaryAddition();\n\n        Integer a = 101010;\n        Integer b = 100100;\n        bin.IntWrapperMethod(a, b);\n\n    }\n\n}\n\nBinaryAddition.main(null);\n\nBinary Conversion\n\n\n\n\n\nBinary A: 101010\n\n\nBinary B: 100100\n\n\nBinary Sum: 1001110"
   },
