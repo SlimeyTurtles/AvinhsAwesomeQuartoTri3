@@ -12,5 +12,12 @@
     "title": "AvinhsAwesomeQuartoTri3",
     "section": "",
     "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "GenericsTypesAndCollections.html",
+    "href": "GenericsTypesAndCollections.html",
+    "title": "Generics Types and Collections",
+    "section": "",
+    "text": "Challenge 1\n\nimport java.util.LinkedList;\nimport java.util.Queue;\n\n\n\nChallenge 2\n\n\nChallenge 3\n\n\nChallenge 4"
   }
 ]

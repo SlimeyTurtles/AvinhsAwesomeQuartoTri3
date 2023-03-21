@@ -1,0 +1,40 @@
+---
+title: "Generics Types and Collections"
+---
+
+### Challenge 1
+
+```{java}
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueCode {
+
+    public static void ChallengeOne() {
+
+        Queue<String> q = new LinkedList<>();
+        String[] array = {"seven", "slimy", "snakes", "sallying", "slowly", "slithered", "southward"} 
+
+        for (String sword : String[] array) {
+            System.out.println(sword);
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        Queue<String> queue1 = new LinkedList<>();
+        Queue<String> queue2 = new LinkedList<>();
+        ChallengeOne();
+
+    }
+}
+
+QueueCode.main(null);
+
+```
+
+### Challenge 2
+### Challenge 3
+### Challenge 4
