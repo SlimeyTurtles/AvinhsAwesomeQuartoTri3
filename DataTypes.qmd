@@ -1,0 +1,166 @@
+---
+title: "Data Types"
+---
+
+int
+
+```{java}
+
+class IntClass {
+
+    public void intPrimitive() {
+        int a = 12;
+        int b = 13;
+        System.out.println("Primitive Int");
+        System.out.println(a+b);
+        System.out.println();
+    }
+
+    public void intWrapper() {
+        Integer a = 12;
+        Integer b = 13;
+        System.out.println("Wrapper Int");
+        System.out.println(a.toString() + b.toString());
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        
+        IntClass gnomes = new IntClass();
+
+        gnomes.intPrimitive();
+        gnomes.intWrapper();
+    }
+
+}
+
+IntClass.main(null);
+
+```
+
+double
+
+```{java}
+
+class DoubleClass {
+
+    public void doublePrimitive() {
+        
+        double a = 20.123;
+        double b = 12.194;
+
+        System.out.println("Primitive Double");
+        System.out.println(a+b);
+        System.out.println();
+    }
+
+    public void doubleWrapper() {
+        
+        Double a = 20.123;
+        Double b = 12.194;
+
+        System.out.println("Wrapper Double");
+        System.out.println(a.toString() + b.toString());
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        
+        DoubleClass gnomes = new DoubleClass();
+
+        gnomes.doublePrimitive();
+        gnomes.doubleWrapper();
+    }
+
+}
+
+DoubleClass.main(null);
+
+```
+
+boolean
+
+```{java}
+
+class BooleanClass {
+
+    public void booleanPrimitive() {
+        
+        boolean a = false;
+        boolean b = true;
+
+        System.out.println("Primitive Boolean");
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+        System.out.println("a&&b: " + (a&&b));
+    }
+
+    public void booleanWrapper() {
+        
+        Boolean a = false;
+        Boolean b = true;
+
+        System.out.println("Wrapper Double");
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+        System.out.println("a compared to b: " + a.compareTo(b));
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        
+        BooleanClass tomes = new BooleanClass();
+
+        tomes.booleanPrimitive();
+        tomes.booleanWrapper();
+    }
+
+}
+
+BooleanClass.main(null);
+
+```
+
+char
+
+```{java}
+
+class CharClass {
+
+    public void charPrimitive() {
+        
+        char a = 'a';
+        char b = '1';
+
+        System.out.println("Primitive Char");
+        System.out.println(a+b);
+        System.out.println();
+    }
+
+    public void charWrapper() {
+        
+        Character a = 'a';
+        Character b = '1';
+
+        System.out.println("Char Boolean");
+        System.out.println("a: " + a);
+        System.out.println("Is a letter: " + Character.isLetter(a));
+        System.out.println("Is a number: " + Character.isDigit(a));
+        System.out.println("b: " + b);
+        System.out.println("Is a letter: " + Character.isLetter(b));
+        System.out.println("Is a number: " + Character.isDigit(b));
+    }
+
+    public static void main(String[] args) {
+        
+        CharClass romes = new CharClass();
+
+        romes.charPrimitive();
+        romes.charWrapper();
+    }
+
+}
+
+CharClass.main(null);
+
+```
