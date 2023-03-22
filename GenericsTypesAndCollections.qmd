@@ -5,7 +5,6 @@ title: "Generics Types and Collections"
 ### Challenge 1
 
 ```{java}
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -14,27 +13,251 @@ public class QueueCode {
     public static void ChallengeOne() {
 
         Queue<String> q = new LinkedList<>();
-        String[] array = {"seven", "slimy", "snakes", "sallying", "slowly", "slithered", "southward"} 
+        String[] array = {"seven", "slimy", "snakes", "sallying", "slowly", "slithered", "southward"};
 
-        for (String sword : String[] array) {
-            System.out.println(sword);
+        System.out.println("Challenge One");
+        System.out.println();
+
+        for (String sword : array) {
+            q.add(sword);
+            System.out.println(q);
         }
 
+        for (String sword : array) {
+            q.remove();
+            System.out.println(q);
+        }
+
+        System.out.println();
     }
 
     public static void main(String[] args) {
 
-        Queue<String> queue1 = new LinkedList<>();
-        Queue<String> queue2 = new LinkedList<>();
         ChallengeOne();
+        
+    }
+}
+
+QueueCode.main(null);
+```
+
+### Challenge 2
+
+```{java}
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueCode {
+
+    public static void ChallengeTwo() {
+
+        // Declares Queue One
+        Queue<Integer> q1 = new LinkedList<>();
+        Integer[] array1 = {1, 4, 5, 8};
+
+        for (Integer i : array1) {
+            q1.add(i);
+        }
+        
+        // Declares Queue Two
+        Queue<Integer> q2 = new LinkedList<>();
+        Integer[] array2 = {2, 3, 6, 7};
+
+        for (Integer i : array2) {
+            q2.add(i);
+        }
+
+        // Declares Summative Queue
+        Queue<Integer> qSum = new LinkedList<>();
+
+        // Boilerplate prints
+        System.out.println("Challenge Two");
+        System.out.println();
+        System.out.println("Queue One: " + q1);
+        System.out.println("Queue Two: " + q2);
+
+        while (q1.size() > 0 && q2.size() > 0) {
+
+            int q1comparee = q1.peek();
+            int q2comparee = q2.peek();
+
+            if (q1comparee > q2comparee) {
+                qSum.add(q2comparee);
+                q2.remove();
+            } else {
+                qSum.add(q1comparee);
+                q1.remove();
+            }
+        }
+
+        if (q1.size() == 0) {
+            for (int i = 0; i < q2.size(); i++) {
+                qSum.add(q2.peek());
+                q2.remove();
+            }
+        } else if (q2.size() == 0) {
+            for (int i = 0; i < q1.size(); i++) {
+                qSum.add(q1.peek());
+                q1.remove();
+            }
+        }
+
+        System.out.println("Summative Queue: " + qSum);
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+        ChallengeTwo();
 
     }
 }
 
 QueueCode.main(null);
-
 ```
 
-### Challenge 2
 ### Challenge 3
+
+```{java}
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
+
+public class QueueCode {
+
+    // temp1 + swaper + temp2 + swapee
+    public static Queue<Integer> swap(int swaperIndex, int swapeeIndex, Queue<Integer> q) {
+
+        if (swaperIndex > swapeeIndex) {
+            swaperIndex = swaperIndex ^ swapeeIndex ^ (swapeeIndex = swaperIndex);
+        } else if (swaperIndex == swapeeIndex) {
+            return q;
+        }
+        
+        Queue<Integer> temp1 = new LinkedList<>();
+        Queue<Integer> temp2 = new LinkedList<>();
+
+        for (int i = 0; i < swaperIndex; i++) {
+            temp1.add(q.peek());
+            q.remove();
+        }
+
+        temp2.add(q.peek());
+        q.remove();
+
+        for (int i = 1; i < (swapeeIndex - swaperIndex); i++) {
+            temp2.add(q.peek());
+            q.remove();
+        }
+
+        temp1.add(q.peek());
+        q.remove();
+
+        temp2.add(temp2.peek());
+        temp2.remove();
+
+        for (Integer i : temp2) {
+            temp1.add(i);
+        }
+
+        for (Integer i : q) {
+            temp1.add(i);
+        }
+
+        return temp1;
+    }
+
+    public static void ChallengeThree() {
+
+        Queue<Integer> q = new LinkedList<>();
+        Integer[] array = {1, 2, 3, 4, 5, 6, 7, 8};
+        
+        for (Integer i : array) {
+            q.add(i);
+        }
+
+        System.out.println("Challenge Three");
+        System.out.println();
+
+        System.out.println("Initial: " + q);
+        System.out.println();
+
+        Random rand = new Random();
+
+        for (int i = 0; i < 10; i++) {
+        
+            int swaper = rand.nextInt(q.size());
+            int swapee = rand.nextInt(q.size());
+            q = swap(swaper, swapee, q);
+            System.out.println("Iteration " + (i + 1) + ": " + q);
+
+        }
+
+        System.out.println();
+        System.out.println("Result: " + q);
+        System.out.println();
+
+    }
+
+    public static void main(String[] args) {
+
+        ChallengeThree();
+
+    }
+}
+
+QueueCode.main(null);
+```
+
 ### Challenge 4
+
+```{java}
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class QueueCode {
+
+    public static void ChallengeFour() {
+
+        // Variable Declaration
+        Queue<Integer> queue = new LinkedList<>();
+        Stack<Integer> stack = new Stack<>();
+        Integer[] array = {1, 2, 3, 4, 5, 6, 7, 8};
+
+        for (Integer i : array) {
+            queue.add(i);
+        }
+
+        int size = queue.size();
+
+        // Boiler Prints
+        System.out.println("Challenge Four");
+        System.out.println();
+        System.out.println("Queue Initial: " + queue);
+
+        // Move from queue to stack
+        for (int i = 0; i < size; i++) {
+            stack.push(queue.peek());
+            queue.remove();
+        }
+
+        // Move back from stack to queue (in reverse)
+        for (int i = 0; i < size; i++) {
+            queue.add(stack.pop());
+        }
+
+        // Print result
+        System.out.println("Queue Inverted: " + queue);
+        System.out.println();
+
+    }
+
+    public static void main(String[] args) {
+
+        ChallengeFour();
+    }
+}
+
+QueueCode.main(null);
+```
